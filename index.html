@@ -14,39 +14,58 @@
     <div class="container">
         <div class="calc-body">
             <div class="calc-screen">
-                <div id="input-number" class="calc-operation"></div>
-                <div id="result-calc" class="calc-typed"></span></div>
+                <div id="input-number" class="calc-operation">0</div>
+                <div id="result-calc" class="calc-typed">0</span></div>
             </div>
             <div class="calc-button-row">
                 <div class="button c" onclick="clearNumber()">C</div>
-                <div class="button operator" onclick="document.getElementById('input-number').innerHTML +='' ">&radic;
+                <div class="button c" onclick="deleteChar(document.getElementById('input-number').innerHTML)">
+                    &larr;</div>
+                <div class="button operator"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('/100')}">%
                 </div>
-                <div class="button operator" onclick="document.getElementById('input-number').innerHTML += '%'">%</div>
-                <div class="button operator" onclick="document.getElementById('input-number').innerHTML +='/' ">/</div>
+                <div class="button operator"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('/')}">/</div>
             </div>
             <div class="calc-button-row">
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 7">7</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 8">8</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 9">9</div>
-                <div class="button operator" onclick="document.getElementById('input-number').innerHTML += 'x'">x</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('7')}">
+                    7</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('8')}">8</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('9')}">9</div>
+                <div class="button operator"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('*')}">*</div>
             </div>
             <div class="calc-button-row">
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 4">4</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 5">5</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 6">6</div>
-                <div class="button operator">−</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('4')}">4</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('5')}">5</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('6')}">6</div>
+                <div class="button operator"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('-')}">−</div>
             </div>
             <div class="calc-button-row">
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 1">1</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 2">2</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 3">3</div>
-                <div class="button operator" onclick="document.getElementById('input-number').innerHTML += '+'">+</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('1')}">1</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('2')}">2</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('3')}">3</div>
+                <div class="button operator"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('+')}">+</div>
             </div>
             <div class="calc-button-row">
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += '.'">.</div>
-                <div class="button" onclick="document.getElementById('input-number').innerHTML += 0">0</div>
-                <div class="button" onclick="deleteChar(document.getElementById('input-number').innerHTML)">
-                    <</div> <div class="button operator" onclick="calculateResult()">=
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('.')}">.</div>
+                <div class="button"
+                    onclick="if(checkNum(document.getElementById('input-number').innerHTML)) {addChar('0')}">0</div>
+                <div class="button operator" onclick="square(document.getElementById('input-number').innerHTML)">x&#50;
+                </div>
+                <div class="button operator" onclick="calculateResult()">=
                 </div>
             </div>
         </div>
